@@ -1,0 +1,23 @@
+.designone{
+    border: 1px solid lightgray;
+    padding: .5rem;
+    width: fit-content;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-right: auto;
+    transition: all .5s ease;
+}
+.designtwo{
+    background-color: #04AA6D ;
+}
+.designtwo:hover{
+    background-color: lightblue;
+    border: 1px solid red;
+    border-radius: 100px;
+}
+.container{
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    background-color: #80808047;
+}

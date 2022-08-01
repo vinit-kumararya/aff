@@ -1,0 +1,25 @@
+<template>
+    <lightning-card  title="ACCOUNT DETAILS" variant="narrow" icon-name="standard:Account">
+        <lightning-layout class="slds-text-heading_medium designtwo " multiple-rows>
+            <lightning-layout-item size="12">
+                <div class="card_text">Account Name : {acctDetail.accName}</div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <div class="card_text">Industry: {acctDetail.accIndustry}</div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">
+                <div class="card_text">Type: {acctDetail.accType}</div>
+            </lightning-layout-item>
+            <lightning-layout-item size="12">    
+                <div class="card_text">Owner: {acctDetail.accOwnerName}</div>
+            </lightning-layout-item>    
+            <img src={acctDetail.accFullPhotoUrl} class="imagesize"/>
+        </lightning-layout>     
+        <p slot="footer"></p>
+    </lightning-card>
+    <template if:true={loading}>
+        <div class="spinner">
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+         </div>
+     </template>  
+</template>

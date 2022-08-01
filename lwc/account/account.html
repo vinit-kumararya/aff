@@ -1,0 +1,52 @@
+<template>
+    <lightning-card>
+    <lightning-layout multiple-rows>
+        <template if:true={acctList}>
+            <div class="container">
+            <template for:each={acctList} for:item="eachAcc">                
+                <lightning-layout-item key={eachAcc.Id} padding="around-small" size="12">
+                    <lightning-layout class="slds-align_absolute-center slds-text-align_center">                        
+                        <div class="designone designtwo">                
+                            <span class="slds-text-heading_label">{eachAcc.Name} </span>
+                            <lightning-button icon-name="utility:forward" label="Next" title="Account Details" class="designone designtwo" onclick={getAccountId} value={eachAcc.Id}></lightning-button>                                                  
+                        </div>
+                    </lightning-layout>                  
+                </lightning-layout-item>                         
+            </template>
+            </div> 
+        </template>
+        <template if:false={acctList}>
+            <div class="slds-align_absolute-center">
+                No Account Found
+            </div>
+        </template>
+    </lightning-layout>    
+    </lightning-card>
+
+    <!--
+        <template if:true={accDetailId}>
+            <c-accdetail id-from-parent={accDetailId}></c-accdetail>
+        </template>
+    -->
+        <template if:true={openModal}>  
+            <div class="slds-modal slds-fade-in-open slds-backdrop">  
+              <div class="slds-modal__container">  
+                <div class="slds-modal__header">  
+                  <lightning-button-icon icon-name="utility:close" alternative-text="Close this window" size="large"  
+                    variant="bare-inverse" onclick={closeModal} class="slds-modal__close">  
+                  </lightning-button-icon>  
+
+                </div>  
+                <div class="slds-modal__content slds-p-around_medium">
+                    <center>                     
+                    <c-accdetail id-from-parent={accDetailId}></c-accdetail> 
+                    </center>
+                </div>  
+                <div class="slds-modal__footer">  
+                  <lightning-button icon-name="utility:back" label="Back" variant="brand" onclick={closeModal}>  
+                  </lightning-button>  
+                </div>  
+              </div>  
+            </div>  
+          </template> 
+</template>

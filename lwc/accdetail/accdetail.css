@@ -1,0 +1,13 @@
+.designtwo{
+    background-color: rgb(209, 212, 234);
+    border: 2px solid black;
+    padding: 10px;
+}
+.imagesize{
+    height: 100px;
+    width: 100px;
+}
+.card_text{
+    font-family: "Times New Roman", Times, serif;
+    font-style: normal;
+}
